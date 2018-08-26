@@ -1,13 +1,10 @@
-#! /bin/bash
-# Copyright (c) 2018 flyzy小站
-
 red='\033[0;31m'
 green='\033[0;32m'
 yellow='\033[0;33m'
 plain='\033[0m'
 
 os='ossystem'
-password='flyzy2005.com'
+password='www.58mxy.com'
 port='1024'
 libsodium_file="libsodium-1.0.16"
 libsodium_url="https://github.com/jedisct1/libsodium/releases/download/1.0.16/libsodium-1.0.16.tar.gz"
@@ -40,7 +37,7 @@ install_ss() {
         fi
         if [[ $port -le 0 || $port -gt 65535 ]]
         then
-          wrong_para_prompt "端口号输入格式错误，请输入1到65535"
+          wrong_para_prompt "端口号输入格式错误，请输入12000到65535"
           exit 1
         fi
         check_os
@@ -439,7 +436,7 @@ install() {
                 esac            
                 ssserver -c /etc/shadowsocks.json -d start
         else    
-                echo -e "[${red}错误${plain}] ss服务器安装失败，请联系flyzy小站（https://www.flyzy2005.com）"
+                echo -e "[${red}错误${plain}] ss服务器安装失败，请联系暮想云官方客服"
                 cleanup
                 exit 1
         fi      
@@ -448,7 +445,7 @@ install() {
         echo -e "你的密码            ：\033[41;37m ${password} \033[0m"
         echo -e "你的端口            ：\033[41;37m ${port} \033[0m"
         echo -e "你的加密方式        ：\033[41;37m aes-256-cfb \033[0m"
-        echo -e "欢迎访问flyzy小站   ：\033[41;37m https://www.flyzy2005.com \033[0m"                   
+        echo -e "欢迎从暮想云购买VPS   ：\033[41;37m https://www.58mxy.com \033[0m"                   
 }
 
 cleanup() {
@@ -474,7 +471,7 @@ case $1 in
 		exit 0;
 		;;
 	-v|v|version )
-		echo 'ss-fly Version 1.0, 2018-01-20, Copyright (c) 2018 flyzy2005'
+		echo 'ss1.0, 2018-08-26, Copyright (c) 2018 暮想云'
 		exit 0;
 		;;
 esac
